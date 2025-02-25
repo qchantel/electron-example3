@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "electron-builder --linux --arm64"
   },
-  "author": "",
+  "author": "Quentin C <quentin.c@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "electron": "^34.2.0",
@@ -22,7 +22,8 @@
         "deb",
         "AppImage"
       ],
-      "category": "Game"
+      "category": "Game",
+      "maintainer": "Quentin C <quentin.c@gmail.com>"
     }
   }
 }
