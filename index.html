@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+    <title>Snake Game</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #1a1a1a;
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+            overflow: hidden;
+        }
+
+        #gameCanvas {
+            border: 2px solid #444;
+            background-color: #2a2a2a;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            max-width: 95vw;
+            max-height: 90vh;
+        }
+
+        #score {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            color: #00ff00;
+            text-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+            z-index: 1;
+        }
+
+        #gameOver {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.9);
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #444;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            z-index: 2;
+        }
+
+        #restartButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #00aa00;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+        }
+
+        #restartButton:hover {
+            background-color: #00cc00;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="score">Score: 0</div>
+    <canvas id="gameCanvas"></canvas>
+    <div id="gameOver">
+        <h2>Game Over!</h2>
+        <p>Final Score: <span id="finalScore">0</span></p>
+        <button id="restartButton">Play Again</button>
+    </div>
+    <script src="snake.js"></script>
+</body>
+
+</html>
